@@ -1,7 +1,7 @@
 What Stripe employees say about themselves
 =============
 
-Over the weekend I was looking into using Stripe for a project. While reading their documentation I clicked on their [about page](https://stripe.com/about). On it they seem to have pictures of (I believe) all of their employees. Scrolling over each of these pictures a short bio pops up. Viewing the source. 
+Over the weekend I was looking into using Stripe for a project. While reading their documentation I clicked on their [about page](https://stripe.com/about). On it they seem to have pictures of (I believe) all of their employees. Scrolling over each of these pictures a short bio pops up. Viewing the source, you can see that the bios all look like this: 
 
 ```
 <span class="bio" style="top: -121px; left: -60px;">
@@ -15,9 +15,12 @@ Over the weekend I was looking into using Stripe for a project. While reading th
                 </span>
 ```
 
-After viewing a few of these I wondered if there were any common theme. Since I needed a 20 minute break from my actual project I decided to do some analysis.
+After viewing a few of these I wondered if there were any common themes. Since I needed a 20 minute break from my actual project I decided to do some analysis.
 
-Since each of these mini biographies is in well formed html it was easy to use BeautifulSoup to pull out the raw text of each bio. After extracting the data and filtering out any stop words using NLTK I was curious to see what words were most common. Since there are 180 bios on the page I looked for words that appeared in at least 5% or 9 biographies (assuming no word duplication in a given bios)
+Since each of these mini biographies is in well formed html it was easy to use BeautifulSoup to pull out the raw text of each bio. After extracting the data and filtering out any stop words using NLTK I was curious to see what words were most common. Since there are 180 bios on the page I looked for words that appeared in at least 5% or 9 biographies (making the simplifying assumption that in a given bios no word appears twice)
+
+Results
+--------
 
 * stripe appeared 114 times
 * studied appeared 85 times
@@ -47,18 +50,14 @@ Since each of these mini biographies is in well formed html it was easy to use B
 * originally appeared 10 times
 * infrastructure appeared 10 times
 * dan appeared 10 times
-* d appeared 9 times
+* d appeared 9 times (this is an artifcat of how I cleaned up the text)
 * lives appeared 9 times
 * facebook appeared 9 times
 * founded appeared 9 times
 * google appeared 9 times
 * likes appeared 9 times
 
-Ignoring words that are obviously about their transition to Stripe (stripe, previously joining) the most obvious trend is everyone talking about their education. Studied is the most common word after stripe beating out 'worked' by a comfortable margin, 'university' and 'Science' also making it into the top 10. Harvard, MIT, Stanford and Berkeley get a combined 49 mentions (although some of these appear multiple times in the same bio) 
+Ignoring words that are obviously about their transition to Stripe (stripe, previously joining) the most obvious trend is everyone talking about their education. 'studied' is the most common word after 'stripe' beating out 'worked' by a comfortable margin, 'university' and 'science' also making it into the top 10. People tend to mention their alma matter with Harvard, MIT, Stanford and Berkeley get a combined 49 mentions.
 
 
-Another interesting trend was from the bios is it doesn't look like they have a lot of employees from any particular company. 'google' and 'facebook' are the only two companies that have at least 9 mentions. But they're both tied with 'founded'. As in the person was a founded/co-founded a company 
-
-
-
-As you would expect there is a long tail of words. n\
+Another interesting trend was from the bios is it doesn't look like they have a lot of employees from any particular company. 'google' and 'facebook' are the only two companies that have at least 9 mentions. But they're both tied with 'founded'. As in the person was a founded/co-founded a company. 
