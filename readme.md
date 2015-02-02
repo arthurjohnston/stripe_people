@@ -1,4 +1,4 @@
-# What Stripe employees say about themselves
+# How Stripe Employees describe themselves
 
 
 Over the weekend I was looking into using Stripe for a project. While reading their documentation I clicked on their [about page](https://stripe.com/about). On it they seem to have pictures of (I believe) all of their employees. Scrolling over each of these pictures a short bio pops up. Viewing the source, you can see that the bios all look like this: 
